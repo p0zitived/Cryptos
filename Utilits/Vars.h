@@ -1,1 +1,1 @@
-const char caesar_alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+const char caesar_alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";

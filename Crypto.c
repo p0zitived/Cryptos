@@ -23,6 +23,10 @@ int main(int argc,char *argv[])
     // Options
     options[0] = "-Ecsr";
     options[1] = "-Dcsr";
+    options[2] = "-Ecsrm";
+    options[3] = "-Dcsrm";
+    options[4] = "-Ecsrk";
+    options[5] = "-Dcsrk";
 
     char *program = argv[0]; 
     char *option = argv[1]; 
@@ -43,9 +47,9 @@ int main(int argc,char *argv[])
     break; 
     case 3: 
         if (strcmp(argv[1],"-Ecsr") == 0) { 
-                CSRencrypt_math(message);
+                CSRencrypt_key(message);
         } else if (strcmp(argv[1],"-Dcsr") == 0) { 
-                CSRdecrypt_math(message);
+                CSRdecrypt_key(message);
         } else { 
             fprintf(stderr,"%s: illegal option %s\n",program,option); 
             exit(4); 
