@@ -5,6 +5,7 @@
 
 #include "Encryptions\Csk.h"
 #include "Encryptions\CaesarEncryption.h"
+#include "Encryptions\Vgn.h"
 
 char *options[10];
 
@@ -28,6 +29,8 @@ int main(int argc,char *argv[])
     options[3] = "-Dcsrm";
     options[4] = "-Ecsrk";
     options[5] = "-Dcsrk";
+    options[5] = "-Evgn";
+    options[5] = "-Dvgn";
 
     char *program = argv[0]; 
     char *option = argv[1]; 
@@ -59,6 +62,10 @@ int main(int argc,char *argv[])
                 CSRencrypt_key(message);
             } else if (strcmp(argv[1],"-Dcsrk") == 0) {
                 CSRdecrypt_key(message);
+            } else if (strcmp(argv[1],"-Evgn") == 0) {
+                VGN_encrypt(message);
+            } else if (strcmp(argv[1],"-Dvgn") == 0) {
+                
             } else { 
                 fprintf(stderr,"%s: illegal option %s\n",program,option); 
                 exit(4); 
