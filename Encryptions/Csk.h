@@ -1,7 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-extern char caesar_alphabet[];
+
+#ifndef VARS
+#define VARS
+#include "..\Utilits\Vars.h"
+#endif
 
 char *CSR_keygen(char *key){
    int i, j, k, length;

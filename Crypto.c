@@ -3,6 +3,7 @@
 #include <string.h>
 #include <math.h>
 
+#include "Encryptions\Csk.h"
 #include "Encryptions\CaesarEncryption.h"
 
 char *options[10];
@@ -45,15 +46,23 @@ int main(int argc,char *argv[])
         }
         exit(3); 
     break; 
-    case 3: 
+    case 3:
         if (strcmp(argv[1],"-Ecsr") == 0) { 
+                CSRencrypt(message);
+            } else if (strcmp(argv[1],"-Dcsr") == 0) { 
+                CSRdecrypt(message);
+            } else if (strcmp(argv[1],"-Ecsrm") == 0) {
+                CSRencrypt_math(message);
+            } else if (strcmp(argv[1],"-Dcsrm") == 0) {
+                CSRdecrypt_math(message);
+            } else if (strcmp(argv[1],"-Ecsrk") == 0) {
                 CSRencrypt_key(message);
-        } else if (strcmp(argv[1],"-Dcsr") == 0) { 
+            } else if (strcmp(argv[1],"-Dcsrk") == 0) {
                 CSRdecrypt_key(message);
-        } else { 
-            fprintf(stderr,"%s: illegal option %s\n",program,option); 
-            exit(4); 
-        } 
+            } else { 
+                fprintf(stderr,"%s: illegal option %s\n",program,option); 
+                exit(4); 
+            } 
     break;
     default:
         fprintf(stderr,"%s: too many arguments.\n",program);
