@@ -65,7 +65,7 @@ int main(int argc,char *argv[])
             } else if (strcmp(argv[1],"-Evgn") == 0) {
                 VGN_encrypt(message);
             } else if (strcmp(argv[1],"-Dvgn") == 0) {
-                
+                VGN_dencrypt(message);
             } else { 
                 fprintf(stderr,"%s: illegal option %s\n",program,option); 
                 exit(4); 
